@@ -1,0 +1,6 @@
+django==5.2.4
+openpyxl==3.1.5         # read .xlsx
+pandas==2.2.2           # convenient import (optional but nice)
+django-autocomplete-light==3.11.0
+weasyprint==62.3        # PDF option A (pure python)
+python-dotenv==1.0.1     # Manage secrets from .env

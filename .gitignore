@@ -1,0 +1,36 @@
+# --- Python / Django ---
+__pycache__/
+*.py[cod]
+*.log
+
+# Virtual env
+.venv/
+env/
+venv/
+
+# Django stuff
+db.sqlite3
+media/
+staticfiles/           # if you later collectstatic here
+
+# IDE/OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Cache & reports
+.coverage
+htmlcov/
+*.tmp
+
+# Local settings / secrets (if you add them)
+.env
+
+# Large binaries (don’t commit wkhtmltopdf exe)
+project/wkhtmltopdf/
+
+# Optional: ignore data files if large
+# data_files/
+
+db.sqlite3
