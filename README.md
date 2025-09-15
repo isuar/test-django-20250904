@@ -1,5 +1,9 @@
 # Django Product Certification Web App
 
+![Python](https://img.shields.io/badge/python-3.13-blue.svg)
+![Django](https://img.shields.io/badge/django-5.2.4-success.svg)
+![License](https://img.shields.io/badge/license-MIT-lightgrey.svg)
+
 ## 📌 Overview
 
 This is a Django-based MVP web app for managing **product certification workflows**.  
@@ -117,38 +121,60 @@ coding_task/
 ---
 
 ## 🚀 Progress
-
 - ✅ Task 1: Core models, migrations, seed import, admin setup  
 - ✅ Task 2: Admin enhancements (inline raw materials, autocomplete)  
 - ✅ Task 3: Application workflow with approvals + PDF generation  
+- ✅ Task 4 (Optional): Excel upload for applications + bugfix in recompute redirect  
 
-See [PROGRESS_REPORT.md](PROGRESS_REPORT.md) for details.
+
+See [PROGRESS_REPORT.md](PROGRESS_REPORT.md) for full details.
 
 ---
 
-## 📑 Notes
+## 📑 How to Use Excel Upload (Task 4)
 
-- The original coding exercise requirements are in [TASK_INSTRUCTIONS.md](TASK_INSTRUCTIONS.md).
-- This repo is structured for demonstration and can be extended with:
-  - Excel upload via admin
-  - Background job processing
-  - REST API endpoints (DRF)
-  - Customer-facing application pages
-  - Process verification (manufacturing workflow)
+1. Go to **Applications → Application uploads** in Django Admin.  
+2. Click **Add Application upload**, choose your `.xlsx` file, and save.  
+   - File format must include these headers in the first row:  
+     ```
+     Company | Product | Category | RawMaterial | Supplier
+     ```
+3. Back in the list view, select the uploaded file(s).  
+4. From the **Actions** dropdown, choose **Process selected Excel uploads** → click **Go**.  
+5. The system will automatically create or update:  
+   - Companies  
+   - Product Categories  
+   - Raw Materials  
+   - Products (linked to categories and raw materials)  
+   - Supply Chain Companies  
+   - Applications (linked to companies, products, and suppliers)  
+6. Go to **Applications → Applications** to review the newly created entries.  
+7. Use **Recompute Status** or **Download PDF Report** to finalize the workflow.
 
 ---
 
 ## 🛠️ Tech Stack
-
-- **Backend**: Django 5.2.4
-- **Database**: SQLite (default)
-- **Excel Parsing**: `openpyxl`
-- **PDF Export**: `xhtml2pdf` (or WeasyPrint alternative)
+- **Backend**: Django 5.2.4  
+- **Database**: SQLite (default)  
+- **Excel Parsing**: `openpyxl`  
+- **PDF Export**: `xhtml2pdf`  
 - **Autocomplete**: `django-autocomplete-light`
 
 ---
 
-## 👤 Author
+## 📸 Screenshots
 
-Developed as part of a coding test for IDFL.  
-Maintainer: _Irfani Suar_
+### Admin – Applications List
+![Applications List](docs/applications_list.png)
+
+### Admin – Application Detail with Recompute + PDF Buttons
+![Application Detail](docs/application_detail.png)
+
+### Example PDF Report
+![PDF Report](docs/pdf_report.png)
+
+---
+
+## 👤 Author
+Developed by **Irfani Suar** ([GitHub](https://github.com/isuar))
+
