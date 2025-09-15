@@ -165,13 +165,14 @@ See [PROGRESS_REPORT.md](PROGRESS_REPORT.md) for full details.
 ## 📸 Screenshots
 
 ### Admin – Applications List
-![Applications List](docs/applications_list.png)
+![Applications List](project/docs/applications_list.png)
 
 ### Admin – Application Detail with Recompute + PDF Buttons
-![Application Detail](docs/application_detail.png)
+![Application Detail](project/docs/application_detail.png)
 
 ### Example PDF Report
-![PDF Report](docs/pdf_report.png)
+![PDF Report](project/docs/pdf_report.png)
+
 
 ---
 
