@@ -80,3 +80,11 @@ class Application(models.Model):
             self.status = self.STATUS_APPROVED
 
         return self.status
+
+# ---- Optional Task 4: Excel Upload model ----
+class ApplicationUpload(models.Model):
+    file = models.FileField(upload_to="uploads/applications/")
+    uploaded_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"Upload #{self.pk} ({self.file.name})"
