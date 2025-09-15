@@ -47,6 +47,8 @@ source .venv/bin/activate     # on Mac/Linux
 pip install -r requirements.txt
 ```
 
+Dependencies are curated in `requirements.in` and frozen into `requirements.txt` for reproducibility.
+
 ### 4. Configure Environment Variables
 
 Create a `.env` file inside the `project/` folder:

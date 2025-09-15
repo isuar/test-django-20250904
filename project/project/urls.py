@@ -16,7 +16,23 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from product.autocomplete import (
+    ProductCategoryAutocomplete,
+    RawMaterialAutocomplete,
+)
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path("admin/", admin.site.urls),
+
+    # Autocomplete endpoints for django-autocomplete-light (DAL)
+    path(
+        "autocomplete/product-category/",
+        ProductCategoryAutocomplete.as_view(),
+        name="product-category-autocomplete",
+    ),
+    path(
+        "autocomplete/raw-material/",
+        RawMaterialAutocomplete.as_view(),
+        name="raw-material-autocomplete",
+    ),
 ]
