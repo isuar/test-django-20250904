@@ -44,6 +44,19 @@
 
 ---
 
+## ✅ Task 4 (Optional) – Excel Upload
+- Added `ApplicationUpload` model to store uploaded Excel files.
+- Registered **ApplicationUpload** in admin with “Process Excel” action.
+- Parsing logic:
+  - Reads `Company`, `Product`, `Category`, `RawMaterial`, and `Supplier`.
+  - Auto-creates missing records.
+  - Links them into a new `Application`.
+- Fixed **redirect bug** in recompute status (removed confusing “doesn’t exist” message).
+- This feature enables bulk data entry from Excel forms.
+
+---
+
+
 ## 🔄 Dependency Adjustment
 - Originally scaffolded with pandas.  
 - Removed pandas (no wheels yet for Python 3.13 on Windows).  
@@ -59,13 +72,4 @@ xhtml2pdf==0.2.15
 
 ---
 
-## 🔮 Upcoming (Optional) Tasks
-- Excel upload via admin (auto-populate applications).
-- Background job processing (Celery).
-- REST API endpoints (programmatic submissions + docs).
-- Customer-facing application pages (Django templates or Vue/React).
-- Process verification (`process.xlsx`).
-
----
-
-✅ **Status:** Task 1 + Task 2 + Task 3 complete. Core workflow polished, reproducible, and working with PDF export. Ready to proceed to optional tasks.
+✅ **Status:** Task 1 + Task 2 + Task 3 + Option Task 4 complete. Core workflow polished, reproducible, working with PDF export, and excel upload. Ready to proceed to optional tasks.
