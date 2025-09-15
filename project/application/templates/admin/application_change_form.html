@@ -1,0 +1,16 @@
+{% extends "admin/change_form.html" %}
+{% load i18n %}
+
+{% block submit_buttons_bottom %}
+  {{ block.super }}
+  {% if original.pk %}
+    <div style="margin-top: 10px;">
+      <a class="button" href="{% url 'admin:application-approve-recompute' original.pk %}">
+        Recompute Status
+      </a>
+      <a class="button" href="{% url 'admin:application-report' original.pk %}">
+        Download PDF Report
+      </a>
+    </div>
+  {% endif %}
+{% endblock %}

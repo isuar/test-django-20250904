@@ -9,7 +9,7 @@ The app allows:
 
 - **Customer Service staff** to input product certification applications from Excel forms.
 - **Reviewers** to validate applications, approve or reject products and supply chain companies.
-- **PDF reports** to be generated for approved products and companies (planned in later tasks).
+- **PDF reports** to be generated for approved products and companies.
 
 ---
 
@@ -19,8 +19,9 @@ The app allows:
 - **Django Admin**: Manage all models with filters, search, and inline editing.
 - **Seed Data Import**: Import product categories and raw materials from Excel (`product_category.xlsx`, `raw_material.xlsx`).
 - **Application Workflow**: Create applications, link companies/products, approve/reject via admin.
+- **PDF Export**: Download certification report with approved products and suppliers.
 - **Security**: Secret key and debug flag managed via `.env`.
-- **Extendable**: Supports optional tasks like PDF export, background tasks, APIs, and customer-facing pages.
+- **Extendable**: Supports optional tasks like background tasks, APIs, and customer-facing pages.
 
 ---
 
@@ -43,11 +44,11 @@ source .venv/bin/activate     # on Mac/Linux
 
 ### 3. Install Dependencies
 
+Dependencies are curated in `requirements.in` and frozen into `requirements.txt` for reproducibility. Install using:
+
 ```bash
 pip install -r requirements.txt
 ```
-
-Dependencies are curated in `requirements.in` and frozen into `requirements.txt` for reproducibility.
 
 ### 4. Configure Environment Variables
 
@@ -117,9 +118,9 @@ coding_task/
 
 ## 🚀 Progress
 
-- ✅ Task 1: Core models, migrations, seed import, admin setup
-- 🔜 Task 2: Admin enhancements (inline raw materials, autocomplete)
-- 🔮 Task 3: Application workflow with approvals + PDF generation
+- ✅ Task 1: Core models, migrations, seed import, admin setup  
+- ✅ Task 2: Admin enhancements (inline raw materials, autocomplete)  
+- ✅ Task 3: Application workflow with approvals + PDF generation  
 
 See [PROGRESS_REPORT.md](PROGRESS_REPORT.md) for details.
 
@@ -141,8 +142,8 @@ See [PROGRESS_REPORT.md](PROGRESS_REPORT.md) for details.
 
 - **Backend**: Django 5.2.4
 - **Database**: SQLite (default)
-- **Excel Parsing**: `openpyxl`, `pandas`
-- **PDF Export**: `WeasyPrint` (or wkhtmltopdf option)
+- **Excel Parsing**: `openpyxl`
+- **PDF Export**: `xhtml2pdf` (or WeasyPrint alternative)
 - **Autocomplete**: `django-autocomplete-light`
 
 ---
